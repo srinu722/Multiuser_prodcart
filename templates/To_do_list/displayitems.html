@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div align=center>
+
+<!--
+        <h1> your items </h1>
+        {% if prod_disp %}
+         <table>
+            <thead>
+            <th> product name </th>
+
+          </thred>
+          {% for prod in prod_disp %}
+          <tr>
+            <td> {{prod.name}}</td>
+
+            </tr>
+            {% endfor %}
+            </table>
+             {%else%}
+             <p> No records found </p>
+              {% endif %}  -->
+  <h1> your items</h1>
+         {% for key,value in request.session.items %}
+
+       <h2>{{key|upper}} : {{value}}</h2>
+
+        {%endfor%}
+
+
+</div>
+
+
+    </body>
+  </html>

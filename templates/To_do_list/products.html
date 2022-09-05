@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div align=center>
+
+<hr>
+{% if submit %}
+<h1>Welcome to ShoppingCart</h1>
+<h2>Add itme to cart</h2>
+{%endif%}
+<!--  {% if messages %}
+
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+{{ message }}
+
+{% endif %}
+<h2>products available</h2>
+
+  {%for  prod in prod_disp %}
+<h2>{{prod.name}}</h2>
+<li>price: {{prod.price}}</li>
+<<li>description: {{prod.description}}</li>
+<li>quantity: {{prod.quantity}}</li>
+{%endfor%}-->
+<h2>products available</h2>
+
+  {%for  n in prod_disp %}
+    <h3>{{n.name}}</h3>
+{%endfor%}
+    <form method="post">
+     {{ form.as_p }}
+      {% csrf_token %}
+    <!--  {%for  prod in products %}
+  <  <li> <input type="checkbox" id="name" name="name" value="name">
+     <label>{{prod.name}}</label> <br> </li>
+     {%endfor%}-->
+      <input type="submit" class="btn btn-primary" name="" value="Submit">
+    </form><br>
+      <a href="/display" class='btn btn-lg btn-warning'>Display items</a>
+</div>
+    </body>
+  </html>
