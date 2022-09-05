@@ -19,14 +19,15 @@ def additemview(request):
 
     if request.method == 'POST':
         name=request.POST['name']
-        print("$$$$$$$",name)
+
         quantity=request.POST['quantity']
         request.session[name]=quantity
-        #request.session.set_expiry(180)
+        request.session.set_expiry(180)
         for key in list(request.session.keys()):
             if key.startswith("_"):
                 del request.session[key]
             submit=True
+
         #if request.session[name] != request.POST['name']:
     #    for key in list(request.session.keys()):
         #        if not key.startswith("_"): # skip keys set by the django system
@@ -42,7 +43,7 @@ def additemview(request):
         #return render(request,'To_Do_list/products.html',{'form':form,'prod_disp':prod_disp})
     prod_disp=Products.objects.all()
 
-    print("@@@@@@@@@@@@",prod_disp)
+
     return render(request,'To_Do_list/products.html',{'form':form,'submit':submit,'prod_disp':prod_disp})
 
 

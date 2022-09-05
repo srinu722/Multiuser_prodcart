@@ -68,7 +68,7 @@ def login(request):
             password = form.cleaned_data.get('password1')
             qu = list(User.objects.values_list('username'))
             qp = list(User.objects.values_list('password1'))
-            print("%%%%%%%%")
+
             for q in qu:
                 usernamedb=''.join(q)
                 print(usernamedb)
@@ -86,7 +86,7 @@ def login(request):
             #user = authenticate(username=username, password=password)
     #        )
             if (username == usernamedb and password == passworddb):
-                print("%%%%%%%%############")
+
             #    login(request,user)
                 message = f'Hello {username}! You have been logged in'
 
@@ -103,6 +103,7 @@ def login(request):
 
 
 def logout(request):
+    #request.session.flush()
     #logout(request)
     return render(request, 'user_auth/logout.html')
 
