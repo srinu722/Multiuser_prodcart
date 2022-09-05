@@ -1,12 +1,13 @@
-<html>
-    <head>
-        <title>home</title>
-    </head>
-    <body>
+{%extends 'user_auth/index.html'%}
 
+  {%block body_block%}
+      <br>
+      <div class="alert alert-success" role="alert">
+          <h2 style="text-align: center;">Logged out!</h2>
 
+</div>
+      <h3>Login again?</h3>
+      <a href="/login">login</a>
+      <a href="/home">home</a>
 
-            <p>You are logged in as {{ request.user }}. Click here to <a href="{% url 'logout' %}">log out</a></p>
-
-    </body>
-</html>
+{%endblock %}

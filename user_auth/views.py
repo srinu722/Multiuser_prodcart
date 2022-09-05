@@ -103,7 +103,7 @@ def login(request):
 
 
 def logout(request):
-    logout(request)
-    return redirect('user_auth/logout.html')
+    #logout(request)
+    return render(request, 'user_auth/logout.html')
 
 #########    return render(request,'user_auth/displayitems.html')
